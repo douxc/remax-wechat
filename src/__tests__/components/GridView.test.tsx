@@ -4,7 +4,7 @@ import { GridView } from '../../hostComponents';
 
 describe('GridView', () => {
   it('render correctly', () => {
-    const testRenderer = TestRenderer.create(<GridView type='aligned' />);
+    const testRenderer = TestRenderer.create(<GridView />);
 
     expect(testRenderer.toJSON()).toMatchSnapshot();
   });

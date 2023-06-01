@@ -11,7 +11,7 @@ interface GridViewProps extends BaseProps {
    *
    * default: aligned
    */
-  type: 'aligned' | 'masonry';
+  type?: 'aligned' | 'masonry';
   /**
    * 交叉轴元素数量
    *
@@ -40,3 +40,11 @@ interface GridViewProps extends BaseProps {
 
 export const GridView: React.ComponentType<GridViewProps> =
   createHostComponent<GridViewProps>('grid-view');
+
+GridView.defaultProps = {
+  type: 'aligned',
+  crossAxisCount: 2,
+  maxCrossAxisExtent: 0,
+  mainAxisGap: 0,
+  crossAxisGap: 0,
+};
