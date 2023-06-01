@@ -48,3 +48,4 @@ export * from './AdCustom';
 export * from './PageMeta';
 export * from './NavigationBar';
 export * from './GridView';
+export * from './RootPortal';
