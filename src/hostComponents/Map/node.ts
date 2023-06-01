@@ -35,6 +35,7 @@ export const alias = {
   enableTraffic: 'enable-traffic',
   enablePoi: 'enable-poi',
   enableBuilding: 'enable-building',
+  enableAutoMaxOverlooking: 'enable-auto-max-overlooking',
   onTap: 'bindtap',
   onClick: 'bindtap',
   onMarkerTap: 'bindmarkertap',

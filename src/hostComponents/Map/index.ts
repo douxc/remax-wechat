@@ -61,6 +61,8 @@ export interface MapProps extends BaseProps {
   enableBuilding?: boolean;
   /** 配置项 2.8.2 */
   setting?: any;
+  /**  开启最大俯视角，俯视角度从 45 度拓展到 75 度 2.26.0*/
+  enableAutoMaxOverlooking?: boolean;
   /** 点击标记点时触发，e.detail = {markerId} 1.0.0 */
   onMarkerClick?: (event: GenericEvent) => any;
   /** 点击控件时触发，e.detail = {controlId} 1.0.0 */
@@ -79,7 +81,8 @@ export interface MapProps extends BaseProps {
 /**
  * https://developers.weixin.qq.com/miniprogram/dev/component/map.html
  */
-export const Map: React.ComponentType<MapProps> = createHostComponent<MapProps>('map');
+export const Map: React.ComponentType<MapProps> =
+  createHostComponent<MapProps>('map');
 
 Map.defaultProps = {
   scale: 16,
@@ -98,4 +101,5 @@ Map.defaultProps = {
   enableSatellite: false,
   enableTraffic: false,
   setting: {},
+  enableAutoMaxOverlooking: false,
 };
