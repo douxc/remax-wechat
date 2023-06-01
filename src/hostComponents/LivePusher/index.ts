@@ -9,7 +9,9 @@ export interface LivePusherProps extends BaseProps {
   mode?: string;
   /** (default: false) 自动推流 1.7.0  */
   autopush?: boolean;
-  /** (default: false) 是否静音 1.7.0  */
+  /** (default: false) 是否静音 1.7.0
+   * @deprecated 即将废弃，可用 enable-mic 替代
+   */
   muted?: boolean;
   /** (default: true) 开启摄像头 1.7.0  */
   enableCamera?: boolean;
@@ -79,6 +81,24 @@ export interface LivePusherProps extends BaseProps {
   videoWidth?: number;
   /** (default: 640) 上推的视频流的分辨率高度	2.10.0 */
   videoHeight?: number;
+  /** 自定义渲染，允许开发者自行处理所采集的视频帧，详见LivePusherContext 2.29.0*/
+  enableVideoCustomRender: boolean;
+  /** 设置小窗模式： push, pop，空字符串或通过数组形式设置多种模式（如： ["push", "pop"]）2.25.0 */
+  pictureInPictureMode?: string[];
+  /** 0：关闭变声；1：熊孩子；2：萝莉；3：大叔；4：重金属；6：外国人；7：困兽；8：死肥仔；9：强电流；10：重机械；11：空灵 2.31.0 */
+  voiceChangerType?: number;
+  /** 是否启动自定义特效，设定后不能更改 2.29.1 */
+  customEffect?: boolean;
+  /** 自定义特效美白效果，取值 0~1。需要开启 custom-effect 2.29.1 */
+  skinWhiteness?: number;
+  /** 自定义特效磨皮效果，取值 0~1。需要开启 custom-effect 2.29.1 */
+  skinSmoothness?: number;
+  /** 自定义特效瘦脸效果，取值 0~1。需要开启 custom-effect 2.29.1 */
+  faceThinness?: number;
+  /** 自定义特效大眼效果，取值 0~1。需要开启 custom-effect 2.29.1 */
+  eyeBigness?: number;
+  /** 帧率，有效值为 1~30 2.31.0 */
+  fps?: number;
   /** 状态变化事件，detail = {code} 1.7.0 */
   onStateChange?: (event: GenericEvent) => any;
   /** 网络状态通知，detail = {info} 1.9.0 */
@@ -91,12 +111,19 @@ export interface LivePusherProps extends BaseProps {
   onBgmProgress?: (event: GenericEvent) => any;
   /** 背景音播放完成时触发 2.4.0 */
   onBgmComplete?: (event: GenericEvent) => any;
+  /** 返回麦克风采集的音量大小 2.12.0 */
+  onAudioVolumeNotify?: (event: GenericEvent) => any;
+  /** 进入小窗 2.25.0 */
+  onEnterPictureInPicture?: (event: GenericEvent) => any;
+  /** 退出小窗 2.25.0 */
+  onLeavePictureInPicture?: (event: GenericEvent) => any;
 }
 
 /**
  * https://developers.weixin.qq.com/miniprogram/dev/component/live-pusher.html
  */
-export const LivePusher: React.ComponentType<LivePusherProps> = createHostComponent<LivePusherProps>('live-pusher');
+export const LivePusher: React.ComponentType<LivePusherProps> =
+  createHostComponent<LivePusherProps>('live-pusher');
 
 LivePusher.defaultProps = {
   mode: 'RTC',
@@ -124,4 +151,14 @@ LivePusher.defaultProps = {
   audioVolumeType: 'voicecall',
   videoWidth: 360,
   videoHeight: 640,
+  enableVideoCustomRender: false,
+  beautyStyle: 'smooth',
+  filter: 'standard',
+  voiceChangerType: 0,
+  customEffect: false,
+  skinWhiteness: 0,
+  skinSmoothness: 0,
+  faceThinness: 0,
+  eyeBigness: 0,
+  fps: 15,
 };
