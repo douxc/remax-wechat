@@ -11,7 +11,7 @@ export interface PageMetaProps extends BaseProps {
   backgroundColorTop?: string;
   /** 底部窗口的背景色，必须为十六进制颜色值，仅 iOS 支持 2.9.0 */
   backgroundColorBottom?: string;
-  /** 页面内容的背景色，用于页面中的空白部分和页面大小变化 resize 动画期间的临时空闲区域 2.12.1 */
+  /** 页面内容的背景色，用于页面中的空白部分和页面大小变化 resize 动画期间的临时空闲区域 2.12.1 */
   rootBackgroundColor?: string;
   /** 滚动位置，可以使用 px 或者 rpx 为单位，在被设置时，页面会滚动到对应位置 2.9.0 */
   scrollTop?: string;
@@ -36,7 +36,8 @@ export interface PageMetaProps extends BaseProps {
  * 页面属性配置节点，用于指定页面的一些属性、监听页面事件。只能是页面内的第一个节点。可以配合 navigation-bar 组件一同使用。
  * @see https://developers.weixin.qq.com/miniprogram/dev/component/page-meta.html
  */
-export const PageMeta: React.ComponentType<PageMetaProps> = createHostComponent<PageMetaProps>('page-meta');
+export const PageMeta: React.ComponentType<PageMetaProps> =
+  createHostComponent<PageMetaProps>('page-meta');
 
 PageMeta.defaultProps = {
   scrollDuration: 300,

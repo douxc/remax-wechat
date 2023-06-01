@@ -14,9 +14,11 @@ export interface CanvasProps extends BaseProps {
 }
 
 /**
+ * 画布。2.9.0 起支持一套新 Canvas 2D 接口（需指定 type 属性），同时支持同层渲染，原有接口不再维护。旧版本可参考 旧版画布迁移指南 进行迁移。
  * @see https://developers.weixin.qq.com/miniprogram/dev/component/canvas.html
  */
-export const Canvas: React.ComponentType<CanvasProps> = createHostComponent<CanvasProps>('canvas');
+export const Canvas: React.ComponentType<CanvasProps> =
+  createHostComponent<CanvasProps>('canvas');
 
 Canvas.defaultProps = {
   disableScroll: false,

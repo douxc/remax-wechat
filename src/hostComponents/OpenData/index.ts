@@ -26,8 +26,10 @@ export interface OpenDataProps extends BaseProps {
 }
 /**
  * https://developers.weixin.qq.com/miniprogram/dev/component/open-data.html
+ * @deprecated 用户信息相关功能已进行调整，详见 小程序用户信息相关接口调整公告;https://developers.weixin.qq.com/community/develop/doc/000e881c7046a8fa1f4d464105b001
  */
-export const OpenData: React.ComponentType<OpenDataProps> = createHostComponent<OpenDataProps>('open-data');
+export const OpenData: React.ComponentType<OpenDataProps> =
+  createHostComponent<OpenDataProps>('open-data');
 
 OpenData.defaultProps = {
   lang: 'en',
