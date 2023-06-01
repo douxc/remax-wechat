@@ -77,6 +77,26 @@ export interface VideoProps extends BaseProps {
   vslideGesture?: boolean;
   /** 在全屏模式下，是否开启亮度与音量调节手势 2.6.2 */
   vslideGestureInFullscreen?: boolean;
+  /** 格式固定为 https://servicewechat.com/{appid}/{version}/page-frame.html，其中 {appid} 为小程序的 appid，{version} 为小程序的版本号，版本号为 0 表示为开发版、体验版以及审核版本，版本号为 devtools 表示为开发者工具，其余为正式版本； 2.13.0 */
+  referrerPolicy?: 'origin' | 'no-referrer';
+  /** 是否为 DRM 视频源 2.19.3 */
+  isDRM?: boolean;
+  /** 是否为直播源 2.28.1 */
+  isLive?: boolean;
+  /** DRM 设备身份认证 url，仅 is-drm 为 true 时生效 (Android) 2.19.3 */
+  provisionUrl?: string;
+  /** DRM 设备身份认证 url，仅 is-drm 为 true 时生效 (iOS) 2.19.3 */
+  certificateUrl?: string;
+  /** DRM 获取加密信息 url，仅 is-drm 为 true 时生效 2.19.3 */
+  licenseUrl?: string;
+  /** 指定码率上界，单位为比特每秒 2.26.0 */
+  preferredPeakBitRate?: number;
+  /** 用户选择投屏设备时触发 detail = { state: "success"/"fail" } 2.32.0 */
+  onCastingUserSelect?: (event: GenericEvent) => any;
+  /** 投屏成功/失败时触发 detail = { type, state: "success"/"fail" } 2.32.0 */
+  onCastingStateChange?: (event: GenericEvent) => any;
+  /** 投屏被中断时触发 2.32.0 */
+  onCastingInterrupt?: (event: GenericEvent) => any;
   /** 当开始/继续播放时触发play事件 1.0.0 */
   onPlay?: (event: GenericEvent) => any;
   /** 当暂停播放时触发 pause 事件 1.0.0 */
@@ -105,7 +125,10 @@ export interface VideoProps extends BaseProps {
   onSeekComplete?: (event: GenericEvent) => any;
 }
 
-const VideoRender: React.ForwardRefRenderFunction<any, VideoProps> = (props, ref) => {
+const VideoRender: React.ForwardRefRenderFunction<any, VideoProps> = (
+  props,
+  ref
+) => {
   const { children, ...restProps } = props;
   const videoProps = {
     ...restProps,
@@ -117,6 +140,7 @@ const VideoRender: React.ForwardRefRenderFunction<any, VideoProps> = (props, ref
 
 /**
  * video 默认宽度 300px、高度 225px，可通过 wxss 设置宽高
+ * 视频（v2.4.0 起支持同层渲染）
  * https://developers.weixin.qq.com/miniprogram/dev/component/video.html
  */
 const RemaxVideo = React.forwardRef(VideoRender);
@@ -149,6 +173,8 @@ RemaxVideo.defaultProps = {
   showScreenLockButton: false,
   showSnapshotButton: false,
   showBackgroundPlaybackButton: false,
+  referrerPolicy: 'no-referrer',
 };
 
-export const Video: React.ComponentType<VideoProps> = createHostComponent<VideoProps>(hostComponentName, RemaxVideo);
+export const Video: React.ComponentType<VideoProps> =
+  createHostComponent<VideoProps>(hostComponentName, RemaxVideo);

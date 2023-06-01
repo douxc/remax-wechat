@@ -52,6 +52,16 @@ export const alias = {
   onEnterPictureInPicture: 'bindenterpictureinpicture',
   onLeavePictureInPicture: 'bindleavepictureinpicture',
   onSeekComplete: 'bindseekcomplete',
+  referrerPolicy: 'referrer-policy',
+  isDRM: 'is-drm',
+  isLive: 'is-live',
+  provisionUrl: 'provision-url',
+  certificateUrl: 'certificate-url',
+  licenseUrl: 'license-url',
+  preferredPeakBitRate: 'preferred-peak-bit-rate',
+  onCastingUserSelect: 'bindcastinguserselect',
+  onCastingStateChange: 'bindcastingstatechange',
+  onCastingInterrupt: 'bindcastinginterrupt',
 };
 
 export const props = Object.values(alias);
