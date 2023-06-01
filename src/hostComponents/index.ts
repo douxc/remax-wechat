@@ -49,3 +49,5 @@ export * from './PageMeta';
 export * from './NavigationBar';
 export * from './GridView';
 export * from './RootPortal';
+export * from './ChannelLive';
+export * from './ChannelVideo';

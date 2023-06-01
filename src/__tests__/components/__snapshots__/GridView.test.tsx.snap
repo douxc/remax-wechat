@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GridView render correctly 1`] = `
+<grid-view
+  crossAxisCount={2}
+  crossAxisGap={0}
+  mainAxisGap={0}
+  maxCrossAxisExtent={0}
+  type="aligned"
+/>
+`;

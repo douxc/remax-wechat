@@ -3,5 +3,6 @@
 exports[`RichText render correctly 1`] = `
 <rich-text
   nodes={[]}
+  userSelect={false}
 />
 `;

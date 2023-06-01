@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ChannelVideo render correctly 1`] = `
+<channel-video
+  autoplay="true"
+  feedId="123"
+  feedToken="token"
+  finderUserName="test"
+  loop={false}
+  muted={false}
+  objectFit="contain"
+/>
+`;

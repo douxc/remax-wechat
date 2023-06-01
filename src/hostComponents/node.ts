@@ -49,6 +49,8 @@ import * as pageMeta from './PageMeta/node';
 import * as navigationBar from './NavigationBar/node';
 import * as GridView from './GridView/node';
 import * as RootPortal from './RootPortal/node';
+import * as ChannelLive from './ChannelLive/node';
+import * as ChannelVideo from './ChannelVideo/node';
 
 const hostComponents = new Map();
 
@@ -103,5 +105,7 @@ hostComponents.set('page-meta', pageMeta);
 hostComponents.set('navigation-bar', navigationBar);
 hostComponents.set('grid-view', GridView);
 hostComponents.set('root-portal', RootPortal);
+hostComponents.set('channel-live', ChannelLive);
+hostComponents.set('channel-video', ChannelVideo);
 
 export default hostComponents;
