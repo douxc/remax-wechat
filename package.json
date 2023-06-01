@@ -1,0 +1,42 @@
+{
+  "name": "remax-wechat",
+  "version": "2.15.14",
+  "description": "Remax for Wechat",
+  "main": "./cjs/index.js",
+  "esnext": "./esm/index.js",
+  "module": "./esm/index.js",
+  "typings": "./esm/index.d.ts",
+  "files": [
+    "esm",
+    "cjs"
+  ],
+  "scripts": {
+    "clean": "rm -rf cjs esm tsconfig.tsbuildinfo",
+    "prebuild": "npm run clean",
+    "build": "npm run build:esm && npm run build:cjs",
+    "build:esm": "tsc",
+    "build:cjs": "tsc --module CommonJS --outDir cjs",
+    "test": "jest"
+  },
+  "repository": "git+https://github.com/remaxjs/remax.git",
+  "license": "MIT",
+  "dependencies": {
+    "@remax/shared": "2.15.14",
+    "react": "^16.14.0",
+    "remax": "^2.15.14"
+  },
+  "devDependencies": {
+    "@remax/types": "2.15.14",
+    "@types/jest": "^29.5.2",
+    "@types/react": "^16.9.33",
+    "@types/react-test-renderer": "^16.9.1",
+    "@types/wechat-miniprogram": "^3.4.1",
+    "jest": "^29.5.0",
+    "react-test-renderer": "^16.12.0",
+    "ts-jest": "^29.1.0",
+    "typescript": "^5.0.4"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "module": "ESNext",
+    "target": "es5",
+    "strict": true,
+    "composite": true,
+    "noImplicitAny": true,
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "noUnusedLocals": true,
+    "skipLibCheck": true,
+    "rootDir": "src",
+    "outDir": "esm",
+    "lib": ["ES2015", "DOM"],
+    "declaration": true,
+    "jsx": "react",
+    "downlevelIteration": true
+  },
+  "include": ["src/**/*"]
+}
