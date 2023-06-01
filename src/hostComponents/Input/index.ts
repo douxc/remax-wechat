@@ -39,8 +39,10 @@ export interface InputProps extends BaseProps {
    * number	数字输入键盘
    * idcard	身份证输入键盘
    * digit	带小数点的数字键盘
+   * safe-password 密码安全输入键盘
+   * nickname 昵称输入键盘
    */
-  type?: 'text' | 'number' | 'idcard' | 'digit';
+  type?: 'text' | 'number' | 'idcard' | 'digit' | 'safe-password' | 'nickname';
   /**
    * 1.1.0
    * 设置键盘右下角按钮的文字，仅在type='text'时生效
@@ -107,6 +109,18 @@ export interface InputProps extends BaseProps {
    * 指定光标与键盘的距离，取 input 距离底部的距离和 cursor-spacing 指定的距离的最小值作为光标与键盘的距离
    */
   cursorSpacing?: number;
+  /** 安全键盘加密公钥的路径，只支持包内路径 2.18.0 */
+  safePasswordCertPath?: string;
+  /** 安全键盘输入密码长度 2.18.0 */
+  safePasswordLength?: number;
+  /** 安全键盘加密时间戳 2.18.0 */
+  safePasswordTimeStamp?: number;
+  /** 安全键盘加密盐值 2.18.0 */
+  safePasswordNonce?: string;
+  /** 安全键盘计算hash盐值，若指定custom-hash 则无效 2.18.0 */
+  safePasswordSalt?: string;
+  /** 安全键盘计算hash的算法表达式，如 `md5(sha1('foo' + sha256(sm3(password + 'bar'))))` 2.18.0 */
+  safePasswordCustomHash?: string;
   /**
    * 1.0.0
    * 键盘输入时触发，event.detail = {value, cursor, keyCode}，keyCode 为键值，
@@ -138,7 +152,8 @@ export interface InputProps extends BaseProps {
 /**
  * https://developers.weixin.qq.com/miniprogram/dev/component/input.html
  */
-export const Input: React.ComponentType<InputProps> = createHostComponent<InputProps>('input');
+export const Input: React.ComponentType<InputProps> =
+  createHostComponent<InputProps>('input');
 
 Input.defaultProps = {
   type: 'text',
