@@ -3,6 +3,7 @@
 exports[`Map render correctly 1`] = `
 <map
   enable3D={false}
+  enableAutoMaxOverlooking={false}
   enableOverlooking={false}
   enableRotate={false}
   enableSatellite={false}

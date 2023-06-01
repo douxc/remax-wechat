@@ -4,6 +4,7 @@ exports[`VoipRoom render correctly 1`] = `
 <voip-room
   devicePosition="front"
   mode="camera"
+  objectFit="fill"
   openId="openId"
 />
 `;

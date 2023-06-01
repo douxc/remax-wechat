@@ -82,7 +82,7 @@ export interface LivePusherProps extends BaseProps {
   /** (default: 640) 上推的视频流的分辨率高度	2.10.0 */
   videoHeight?: number;
   /** 自定义渲染，允许开发者自行处理所采集的视频帧，详见LivePusherContext 2.29.0*/
-  enableVideoCustomRender: boolean;
+  enableVideoCustomRender?: boolean;
   /** 设置小窗模式： push, pop，空字符串或通过数组形式设置多种模式（如： ["push", "pop"]）2.25.0 */
   pictureInPictureMode?: string[];
   /** 0：关闭变声；1：熊孩子；2：萝莉；3：大叔；4：重金属；6：外国人；7：困兽；8：死肥仔；9：强电流；10：重机械；11：空灵 2.31.0 */

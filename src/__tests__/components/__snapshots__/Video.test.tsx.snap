@@ -18,6 +18,7 @@ exports[`Video render correctly 1`] = `
   pageGesture={false}
   pictureInPictureShowProgress={false}
   playBtnPosition="bottom"
+  referrerPolicy="no-referrer"
   showBackgroundPlaybackButton={false}
   showCastingButton={false}
   showCenterPlayBtn={true}
