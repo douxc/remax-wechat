@@ -47,6 +47,7 @@ import * as voipRoom from './VoipRoom/node';
 import * as adCustom from './AdCustom/node';
 import * as pageMeta from './PageMeta/node';
 import * as navigationBar from './NavigationBar/node';
+import * as GridView from './GridView/node';
 
 const hostComponents = new Map();
 
@@ -99,5 +100,6 @@ hostComponents.set('voip-room', voipRoom);
 hostComponents.set('ad-custom', adCustom);
 hostComponents.set('page-meta', pageMeta);
 hostComponents.set('navigation-bar', navigationBar);
+hostComponents.set('grid-view', GridView);
 
 export default hostComponents;

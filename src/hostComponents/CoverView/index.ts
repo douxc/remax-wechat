@@ -9,6 +9,8 @@ export interface CoverViewProps extends BaseProps {
 }
 
 /**
+ * 目前原生组件均已支持同层渲染，建议使用 view 替代
  * @see https://developers.weixin.qq.com/miniprogram/dev/component/cover-view.html
  */
-export const CoverView: React.ComponentType<CoverViewProps> = createHostComponent<CoverViewProps>('cover-view');
+export const CoverView: React.ComponentType<CoverViewProps> =
+  createHostComponent<CoverViewProps>('cover-view');

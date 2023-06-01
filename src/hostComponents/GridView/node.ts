@@ -3,12 +3,14 @@ export const alias = {
   className: 'class',
   style: 'style',
   animation: 'animation',
-  src: 'src',
-  referrerPolicy: 'referrer-policy',
-  onLoad: 'bindload',
-  onError: 'binderror',
   onTap: 'bindtap',
   onClick: 'bindtap',
+
+  type: 'type',
+  crossAxisCount: 'cross-axis-count',
+  maxCrossAxisExtent: 'max-cross-axis-extent',
+  maxAxisGap: 'max-axis-gap',
+  crossAxisGap: 'cross-axis-gap',
 };
 
 export const props = Object.values(alias);
