@@ -19,6 +19,7 @@ export const alias = {
   onSuccess: 'bindsuccess',
   onFail: 'bindfail',
   onComplete: 'bindcomplete',
+  shortLink: 'short-link',
 };
 
 export const props = Object.values(alias);

@@ -8,7 +8,13 @@ export interface NavigatorProps extends BaseProps {
   /** 当前小程序内的跳转链接 1.0.0 */
   url?: string;
   /** (default: navigate) 跳转方式 1.0.0 */
-  openType?: 'navigate' | 'redirect' | 'switchTab' | 'reLaunch' | 'navigateBack' | 'exit';
+  openType?:
+    | 'navigate'
+    | 'redirect'
+    | 'switchTab'
+    | 'reLaunch'
+    | 'navigateBack'
+    | 'exit';
   /** (default: 1) 当 open-type 为 'navigateBack' 时有效，表示回退的层数 1.0.0 */
   delta?: number;
   /** 当target="miniProgram"时有效，要打开的小程序 appId 2.0.7 */
@@ -33,11 +39,14 @@ export interface NavigatorProps extends BaseProps {
   onFail?: (event: GenericEvent) => any;
   /** 当target="miniProgram"时有效，跳转小程序完成 2.0.7 */
   onComplete?: (event: GenericEvent) => any;
+  /** 当`target="miniProgram"`时有效，当传递该参数后，可以不传 app-id 和 path。链接可以通过【小程序菜单】->【复制链接】获取。 2.18.1 */
+  shortLink?: string;
 }
 /**
  * https://developers.weixin.qq.com/miniprogram/dev/component/navigator.html
  */
-export const Navigator: React.ComponentType<NavigatorProps> = createHostComponent<NavigatorProps>('navigator');
+export const Navigator: React.ComponentType<NavigatorProps> =
+  createHostComponent<NavigatorProps>('navigator');
 
 Navigator.defaultProps = {
   target: 'self',
