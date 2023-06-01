@@ -14,6 +14,8 @@ export interface PickerViewProps extends BaseProps {
   maskStyle?: React.CSSProperties;
   /** 设置蒙层的类名 1.5.0 */
   maskClassName?: string;
+  /** 是否在手指松开时立即触发 change 事件。若不开启则会在滚动动画结束后触发 change 事件。 2.21.0 */
+  immediateChange?: boolean;
   /** 滚动选择时触发change事件，event.detail = {value}；value为数组，表示 picker-view 内的 picker-view-column 当前选择的是第几项（下标从 0 开始） 1.0.0 */
   onChange?: (event: GenericEvent) => any;
   /** 当滚动选择开始时候触发事件 2.3.1 */
@@ -25,4 +27,5 @@ export interface PickerViewProps extends BaseProps {
 /**
  * https://developers.weixin.qq.com/miniprogram/dev/component/picker-view.html
  */
-export const PickerView: React.ComponentType<PickerViewProps> = createHostComponent<PickerViewProps>('picker-view');
+export const PickerView: React.ComponentType<PickerViewProps> =
+  createHostComponent<PickerViewProps>('picker-view');

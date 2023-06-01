@@ -11,6 +11,7 @@ export const alias = {
   maskStyle: 'mask-style',
   maskClass: 'mask-class',
   maskClassName: 'mask-class',
+  immediateChange: 'immediate-change',
   onChange: 'bindchange',
   onPickStart: 'bindpickstart',
   onPickEnd: 'bindpickend',
